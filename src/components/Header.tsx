@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import logo from '../assets/logo.jpg'
+
 import { modalActions } from '../store/modal';
 
 
@@ -18,9 +18,7 @@ const Header=()=>{
 
     return(
         <header id='main-header'>
-    <div id="title">
-        <img src={logo} alt="this is logo img"  />
-    </div>
+    
     <nav>
     <button onClick={handleCart}>cart({selectedQuantity})</button>
     </nav>

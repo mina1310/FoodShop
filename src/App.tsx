@@ -15,7 +15,7 @@ const App:React.FC =() =>{
     {path:'/' ,
     element:<RootLayout />,
     children:[
-      {path:'/', element:<Home />},
+      {index:true, element:<Home />},
       {path:'/orders', element:<Orders />},
       {path:'/cart', element:<Cart />}
       ]
