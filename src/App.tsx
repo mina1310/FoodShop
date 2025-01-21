@@ -6,6 +6,8 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import RootLayout from "./pages/RootLayout";
+import Orders from "./pages/Orders";
+import Cart from "./pages/Cart";
 
 
 const App:React.FC =() =>{
@@ -13,7 +15,9 @@ const App:React.FC =() =>{
     {path:'/' ,
     element:<RootLayout />,
     children:[
-      {path:'/', element:<Home />}
+      {path:'/', element:<Home />},
+      {path:'/orders', element:<Orders />},
+      {path:'/cart', element:<Cart />}
       ]
     },
 
