@@ -1,8 +1,11 @@
 import React from "react";
+import MealFood from "../components/MealFood/MealFood";
 const Home :React.FC =()=>{
 
     return (
-    <p>this is home page</p>
+     <div className="main">
+    <MealFood />
+    </div>
 );
     
 
