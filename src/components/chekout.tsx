@@ -2,9 +2,11 @@ import { useDispatch } from "react-redux";
 import Input from "./Input";
 import { modalActions } from "../store/modal";
 import Buttons from "./Buttons";
+import React from "react";
+import { AppDispatch } from "../store";
 
-const Chekout=()=>{
-    const dispatch=useDispatch();
+const Chekout:React.FC=()=>{
+    const dispatch=useDispatch<AppDispatch>();
     const handleCloseChekout=()=>{
         dispatch(modalActions.hideModal())
     }
