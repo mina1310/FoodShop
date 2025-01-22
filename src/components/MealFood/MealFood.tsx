@@ -2,14 +2,15 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getData } from "../../store/food-slice";
 import Food from "../food";
+import { AppDispatch, RootState } from "../../store";
 
 const MealFood:React.FC=()=>{
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
     useEffect(()=>{
         dispatch(getData())
         
     },[dispatch])
-    const mealFoods=useSelector(state=>state.food.foods)
+    const mealFoods=useSelector((state:RootState)=>state.food.foods)
     
     return(
         <div>

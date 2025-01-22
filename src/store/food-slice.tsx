@@ -1,11 +1,7 @@
 import { createSlice,PayloadAction } from "@reduxjs/toolkit";
 import { AppDispatch } from ".";
-interface FoodItem {
-    id: string;
-    name: string;
-    price: number;
-    quantity?: number;
-  }
+import { FoodItem } from "./food-slice-type";
+
   
   interface FoodState {
     foods: FoodItem[]; 

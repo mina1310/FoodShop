@@ -2,21 +2,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { modalActions } from "../store/modal";
 import Buttons from "./Buttons";
 import { foodActions } from "../store/food-slice";
+import React from "react";
+import { AppDispatch, RootState } from "../store";
+import { FoodItem } from "../store/food-slice-type";
 
-function Cart(){
-const dispatch=useDispatch();
-const {selectedFoods,totalAmount}=useSelector(state=>state.food);
+const Cart:React.FC=()=>{
+const dispatch=useDispatch<AppDispatch>();
+const {selectedFoods,totalAmount}=useSelector((state:RootState)=>state.food);
 const showCheckout=()=>{
     dispatch(modalActions.setContentModal('chekout'));
 }
 const closeCart=()=>{
     dispatch(modalActions.hideModal());
 }
-const addMealFood=(items)=>{
+const addMealFood=(items:FoodItem)=>{
     dispatch(foodActions.addFood(items))
     
 }
-const removeMealFood=(id)=>{
+const removeMealFood=(id:string)=>{
     dispatch(foodActions.removeFood(id))
 }
 
