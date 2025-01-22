@@ -77,6 +77,6 @@ export const getData=()=>{
     fetchDate();
 };
 }
-
+ 
 export const foodActions=foodSlice.actions;
 export default foodSlice;

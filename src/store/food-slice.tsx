@@ -93,6 +93,6 @@ export const getData=()=>{
     fetchDate();
 };
 }
-
+export type RootState=ReturnType<typeof 
 export const foodActions=foodSlice.actions;
 export default foodSlice;
