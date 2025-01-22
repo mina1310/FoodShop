@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { modalActions } from '../store/modal';
+import React from 'react';
+import { RootState } from '../store';
 
 
 
 
-const Header=()=>{
-    const selectedQuantity=useSelector((state)=>state.food.totalQuantity);
+const Header:React.FC=()=>{
+    const selectedQuantity=useSelector((state:RootState)=>state.food.totalQuantity);
     const dispatch=useDispatch();
     function handleCart(){
         console.log('button click')
