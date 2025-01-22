@@ -1,8 +1,9 @@
 import { useDispatch } from "react-redux";
 import Buttons from "./Buttons";
 import { foodActions } from "../store/food-slice";
+import { FoodItem } from "../store/food-slice-type";
 
-const Food=({id,image,name,price,description})=>{
+const Food:React.FC<FoodItem>=({id,image,name,price,description})=>{
     const dispath=useDispatch();
      const addMealFood=()=>{
         dispath(foodActions.addFood({
