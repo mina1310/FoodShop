@@ -1,9 +1,11 @@
 import { useDispatch } from "react-redux";
 import Buttons from "./Buttons";
 import { modalActions } from "../store/modal";
+import React from "react";
+import { AppDispatch } from "../store";
 
-const Success=()=>{
-    const dispatch=useDispatch();
+const Success:React.FC=()=>{
+    const dispatch=useDispatch<AppDispatch>();
     const close=()=>{
         dispatch(modalActions.hideModal());
     }
