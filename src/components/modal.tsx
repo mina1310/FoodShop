@@ -4,11 +4,15 @@ import { useSelector } from "react-redux";
 import Cart from "./Cart";
 import Chekout from "./chekout";
 import Success from "./Success";
+import React, { ReactNode } from "react";
+import { RootState } from "../store";
 
 
-
-const Modal=  ({children})=>{
-    const content=useSelector(state=>state.modal.contentModal)
+interface ModalProbs{
+    children?:ReactNode;
+}
+const Modal:React.FC<ModalProbs>=  ({children})=>{
+    const content=useSelector((state:RootState)=>state.modal.contentModal)
 //     const renderContent=()=>{
 //         if(content==='cart'){
 //      return <Cart />
@@ -20,12 +24,12 @@ const Modal=  ({children})=>{
 //     return null;
 // };
     
-    const modalComponent={
+    const modalComponent:{[key:string]:React.FC|undefined}={
         cart:Cart,
         chekout:Chekout,
         success:Success
     }
-   const RenderContent=modalComponent[content]
+   const RenderContent=content?modalComponent[content]:undefined;
     
     return createPortal(
      
@@ -35,7 +39,7 @@ const Modal=  ({children})=>{
      {children}
      </div>
      ,
-     document.getElementById('modal')
+     document.getElementById('modal') as HTMLElement
     
     );
 
