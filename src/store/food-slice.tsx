@@ -1,4 +1,5 @@
 import { createSlice,PayloadAction } from "@reduxjs/toolkit";
+import { AppDispatch } from ".";
 interface FoodItem {
     id: string;
     name: string;
@@ -72,7 +73,7 @@ const foodSlice=createSlice({
 
 })
 export const getData=()=>{
-    return async(dispatch)=>{
+    return async(dispatch:AppDispatch)=>{
         dispatch(foodActions.setLoading())
    
     const fetchDate=async()=>{
@@ -93,6 +94,6 @@ export const getData=()=>{
     fetchDate();
 };
 }
-export type RootState=ReturnType<typeof 
+
 export const foodActions=foodSlice.actions;
 export default foodSlice;
