@@ -2,6 +2,7 @@
     display:flex;
     justify-content:flex-start;
     gap: 15rem;
+    max-width: 90%;
   }
   .nav__image{
     padding:1rem;
