@@ -2,8 +2,11 @@ import { NavLink } from "react-router-dom"
 import React from "react";
 import logo from '../../assets/logo.jpg';
 import classes from './MainNavigation.module.css'
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 const MainNavigation :React.FC=()=>{
+    const selectedQuantity=useSelector((state:RootState)=>state.food.totalQuantity);
 
     return(
         <div className={classes.nav__header}>
@@ -13,7 +16,7 @@ const MainNavigation :React.FC=()=>{
         <div className={classes.nav__menu}>
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/orders'>Orders</NavLink>
-        <NavLink to='/cart'>Cart<div className={classes.nav__menu_count}>0</div></NavLink>
+        <NavLink to='/cart'>Cart<div className={classes.nav__menu_count}>{selectedQuantity}</div></NavLink>
         </div>
         </div>
     )

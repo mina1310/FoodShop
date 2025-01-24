@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { modalActions } from "../store/modal";
-import Buttons from "./Buttons";
-import { foodActions } from "../store/food-slice";
+import { modalActions } from "../../store/modal";
+import Buttons from "../Buttons";
+import { foodActions } from "../../store/food-slice";
 import React from "react";
-import { AppDispatch, RootState } from "../store";
-import { FoodItem } from "../store/food-slice-type";
+import { AppDispatch, RootState } from "../../store";
+import { FoodItem } from "../../store/food-slice-type";
 
 const Cart:React.FC=()=>{
 const dispatch=useDispatch<AppDispatch>();

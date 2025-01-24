@@ -1,7 +1,7 @@
 
 import { createPortal } from "react-dom";
 import { useSelector } from "react-redux";
-import Cart from "./Cart";
+import Cart from "./Cart/Cart";
 import Chekout from "./chekout";
 import Success from "./Success";
 import React, { ReactNode } from "react";

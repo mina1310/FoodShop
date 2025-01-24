@@ -3,7 +3,7 @@ import MealFood from "../components/MealFood/MealFood";
 const Home :React.FC =()=>{
 
     return (
-     <div className="main">
+     <div >
     <MealFood />
     </div>
 );
