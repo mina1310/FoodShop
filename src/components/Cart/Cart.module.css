@@ -1,0 +1,27 @@
+.cart{
+ display:flex; 
+justify-content: center;
+}
+.cart__content{
+   
+    color: black;
+    background-color: antiquewhite;
+    text-align: center;
+    list-style-type:none;
+    direction: ltr;
+    width: 500px;
+    padding: 0.8rem 1rem;
+}
+.cart__item{
+    display: flex;
+    justify-content: space-between;
+}
+.cart__item-description{
+    font-size:medium ;
+    font-weight:400;
+
+}
+.cart__item-actions{
+    /* display: flex;
+    justify-content: space-evenly; */
+}
