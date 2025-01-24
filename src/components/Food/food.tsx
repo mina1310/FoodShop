@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
-import Buttons from "./Buttons";
-import { foodActions } from "../store/food-slice";
-import { FoodItem } from "../store/food-slice-type";
+import Buttons from "../Buttons";
+import { foodActions } from "../../store/food-slice"; 
+import { FoodItem } from "../../store/food-slice-type"; 
+import classes from './food.module.css'
 
 const Food:React.FC<FoodItem>=({id,image,name,price,description})=>{
     const dispath=useDispatch();
@@ -12,15 +13,13 @@ const Food:React.FC<FoodItem>=({id,image,name,price,description})=>{
     }
 
     return(
-        <article>
-            <header>
-            <img  src={`http://localhost:3000/${image}`} alt={description}/>
-            </header>
+        <article className={classes['food__item']}>
+            <img   src={`http://localhost:3000/${image}`} alt={description}/>
             <main>
-            <p>{name}</p>
-            <p>{price}</p>
-            <p>{description}</p>
-            <Buttons onClick={addMealFood} label='Add to Cart'/>
+            <h3 >{name}</h3>
+            <p className={classes['food__item-price']}>{price}</p>
+            <p className={classes['food__item-description']}>{description}</p>
+            <Buttons  className={classes['food__item-action']} onClick={addMealFood} label='Add to Cart'/>
             </main>
 
 
