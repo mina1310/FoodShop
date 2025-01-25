@@ -31,15 +31,14 @@ const Modal:React.FC<ModalProbs>=  ({children})=>{
     }
    const RenderContent=content?modalComponent[content]:undefined;
     
-    return createPortal(
+    return (
      
      <div className="modal" >
      {RenderContent? <RenderContent />:<p>not found</p>}
      
      {children}
      </div>
-     ,
-     document.getElementById('modal') as HTMLElement
+     
     
     );
 
