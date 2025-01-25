@@ -34,13 +34,11 @@ const removeMealFood=(id:string)=>{
                 <span className={classes['cart__item-description']}>
                 {items.name} - {items.quantity} * ${items.price}
                 </span>
-                <span className={classes['cart__item-actions']}>
+                <span className={classes['cart__item-controls']}>
               
-                <Buttons onClick={()=>removeMealFood(items.id)}   label='-' />
-        
-                 <span> {items.quantity}</span>
-        
-                <Buttons onClick={()=>addMealFood(items)}  label='+' />
+                <Buttons className={classes['cart__item-actions']} onClick={()=>removeMealFood(items.id)}   label='-' />
+                <span> {items.quantity}</span>
+                <Buttons  className={classes['cart__item-actions']} onClick={()=>addMealFood(items)}  label='+' />
         
                </span>
         
@@ -52,14 +50,12 @@ const removeMealFood=(id:string)=>{
             
         </div>
    
-    <p>total:${Number(totalAmount).toFixed(2)}  </p>
-    <div>
-        <span>
-            <Buttons onClick={closeCart} label='close' />
-        </span>
-        <span>
-            <Buttons onClick={showCheckout}  label='GO TO CHEKOUT' />
-        </span>
+    <p className={classes['cart__total']}>total:${Number(totalAmount).toFixed(2)}  </p>
+    <div className={classes['cart__actions']}>
+        
+     <Buttons  className={classes['cart__actions-closer']} onClick={closeCart} label='close' />
+     <Buttons className={classes['cart__actions-checker']} onClick={showCheckout}  label='GO TO CHEKOUT' />
+       
     </div>
     </div>
     </div>
