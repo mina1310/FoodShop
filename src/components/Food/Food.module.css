@@ -25,6 +25,7 @@
 
 }
 .food__item-action{
+   cursor: pointer;
    background-color: #ffc404;
    color: black;
    border: #ffc404;

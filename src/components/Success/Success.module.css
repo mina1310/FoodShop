@@ -1,0 +1,24 @@
+.success{
+    background-color: antiquewhite;
+    color: black;
+    width: 40rem;
+    border-radius: 0.2rem;
+    padding:0.7rem;
+    font-size:medium ;
+    font-weight:400;
+    line-height:1.5rem;;
+}
+.success__action{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.8rem 0.5rem;
+}
+
+.success__action-closer{
+    border: none;
+    background-color:#ffc404;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size:medium ;
+    font-weight:400;
+}
