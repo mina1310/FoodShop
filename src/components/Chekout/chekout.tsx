@@ -4,6 +4,7 @@ import { modalActions } from "../../store/modal";
 import Buttons from "../Buttons";
 import React from "react";
 import { AppDispatch } from "../../store";
+import classes from './chekout.module.css'
 
 const Chekout:React.FC=()=>{
     const dispatch=useDispatch<AppDispatch>();
@@ -14,14 +15,14 @@ const Chekout:React.FC=()=>{
         dispatch(modalActions.setContentModal('success'))
     }
     return(
-        <div>
+        <div className={classes['chekout']}>
        <p>total Amount:</p>
         <form>
         <div>
         <Input inline={false} label='FullName' type='text' id='fullName' name='name'/>
         </div>
         <div>
-        <Input inline={false} label='EmailAddress' type='email' id='emailAddress' name='email'/>
+        <Input inline={false} label='E-mailAddress' type='email' id='emailAddress' name='email'/>
         </div>
         <div>
         <Input inline={false} label='Street' type='text' id='street' name='street'/>
