@@ -1,13 +1,15 @@
-import { useDispatch } from "react-redux";
+import { useDispatch ,useSelector} from "react-redux";
 import Input from "../Input/Input";
 import { modalActions } from "../../store/modal";
 import Buttons from "../Buttons";
 import React from "react";
 import { AppDispatch } from "../../store";
+import { RootState } from "../../store";
 import classes from './chekout.module.css'
 
 const Chekout:React.FC=()=>{
     const dispatch=useDispatch<AppDispatch>();
+    const {totalAmount}=useSelector((state:RootState)=>state.food);
     const handleCloseChekout=()=>{
         dispatch(modalActions.hideModal())
     }
@@ -16,27 +18,20 @@ const Chekout:React.FC=()=>{
     }
     return(
         <div className={classes['chekout']}>
-       <p>total Amount:</p>
-        <form>
-        <div>
+       <p className={classes['chekout__total']}>total Amount : ${Number(totalAmount).toFixed(2)}</p>
+        <form className={classes['chekout__inputs']}>
         <Input inline={false} label='FullName' type='text' id='fullName' name='name'/>
-        </div>
-        <div>
         <Input inline={false} label='E-mailAddress' type='email' id='emailAddress' name='email'/>
-        </div>
-        <div>
         <Input inline={false} label='Street' type='text' id='street' name='street'/>
-        </div>
-         <div>
-         <Input inline={false} label='PostalCode' type='text' id='postalCode' name='postal'/>
-         <Input inline={false} label='City' type='text' id='city' name='city'/>
-         </div>
+        <Input inline={false} label='PostalCode' type='text' id='postalCode' name='postal'/>
+        <Input inline={false} label='City' type='text' id='city' name='city'/>
         </form>
-        <div>
-            <Buttons onClick={handleCloseChekout} label='close'  />
-            <Buttons onClick={submit}   label='submitOrder'  /> 
+        <div className={classes['chekout__actions']} >
+            <Buttons className={classes['chekout__actions-closer']} onClick={handleCloseChekout} label='close'  />
+            <Buttons  className={classes['chekout__actions-submitter']}onClick={submit}   label='submitOrder'  /> 
         </div>
         </div>
+        
     )
 
 }

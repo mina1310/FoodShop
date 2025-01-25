@@ -1,5 +1,40 @@
 .chekout{
     background-color: antiquewhite;
-    width: 20rem;
+    width: 40rem;
+    border-radius: 0.2rem;
+    padding:0.7rem
+    
     
 }
+.chekout__total{
+    font-size:medium ;
+    font-weight:400;
+    color:black;
+}
+.chekout__inputs INPUT{
+    font:inherit;
+    border:1px  solid #EEDFCC;
+}
+.chekout__inputs INPUT:focus{
+    outline: none;
+    border:1px  solid blue;
+}
+.chekout__actions{
+    display: flex;
+    justify-content: flex-end;
+    margin: 2rem 0;
+    gap:0.5rem;
+    font-size:medium ;
+    font-weight:400;
+}
+.chekout__actions-closer{
+    border: none;
+    background-color: antiquewhite;
+ }
+ 
+ .chekout__actions-submitter{
+    border: none;
+    background-color:#ffc404;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+ }

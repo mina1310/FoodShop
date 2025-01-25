@@ -1,11 +1,11 @@
 
-import { createPortal } from "react-dom";
 import { useSelector } from "react-redux";
-import Cart from "./Cart/Cart";
-import Chekout from "./Chekout/chekout";
-import Success from "./Success";
+import Cart from "../Cart/Cart";
+import Chekout from "../Chekout/chekout";
+import Success from "../Success";
 import React, { ReactNode } from "react";
-import { RootState } from "../store";
+import { RootState } from "../../store";
+import classes from './modal.module.css'
 
 
 interface ModalProbs{
@@ -33,7 +33,7 @@ const Modal:React.FC<ModalProbs>=  ({children})=>{
     
     return (
      
-     <div className="modal" >
+     <div className={classes.modal} >
      {RenderContent? <RenderContent />:<p>not found</p>}
      
      {children}
