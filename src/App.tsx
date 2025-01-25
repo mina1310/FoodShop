@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import RootLayout from "./pages/RootLayout";
 import Orders from "./pages/Orders";
 import CartPage from "./pages/CartPage";
+import FoodDetail from "./pages/FoodDetail";
 
 
 const App:React.FC =() =>{
@@ -17,7 +18,8 @@ const App:React.FC =() =>{
     children:[
       {index:true, element:<Home />},
       {path:'/orders', element:<Orders />},
-      {path:'/cart', element:<CartPage />}
+      {path:'/cart', element:<CartPage />},
+      {path:'/:mealId',element:<FoodDetail />}
       ]
     },
 
