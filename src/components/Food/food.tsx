@@ -15,9 +15,8 @@ const Food:React.FC<FoodItem>=({id,image,name,price,description})=>{
     return(
         <article className={classes['food__item']}>
           <Link to={`/${description}`} state={{name,description}}> <img   src={`http://localhost:3000/${image}`} alt={description}/></Link>
-            
-            <Link to={`/${description}`} state={{name,description}}><h3 >{name}</h3></Link>
-            <p className={classes['food__item-price']}>{price}</p>
+            <Link to={`/${description}`} state={{name,description}}><h3 className={classes['food__item-name']}>{name}</h3></Link>
+            <p className={classes['food__item-price']}>${price}</p>
             {/* <p className={classes['food__item-description']}>{description}</p> */}
             <Buttons  className={classes['food__item-action']} onClick={addMealFood} label='Add to Cart'/>
             
