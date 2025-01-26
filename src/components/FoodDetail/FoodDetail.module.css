@@ -6,8 +6,8 @@
     align-items: center;
     margin: 2rem auto;
     padding:1rem 2rem;
-    text-align: center; /* متن‌ها وسط‌چین */
-    background-color: #1d1a16; /* معادل bg-gray-900 */
+    text-align: center; 
+    background-color: #1d1a16; 
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
      color: #ffffff;
      width: 70%;
