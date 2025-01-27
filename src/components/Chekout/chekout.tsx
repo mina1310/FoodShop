@@ -5,13 +5,15 @@ import Buttons from "../Buttons";
 import React from "react";
 import { AppDispatch } from "../../store";
 import { RootState } from "../../store";
+import { foodActions } from "../../store/food-slice";
 import classes from './chekout.module.css'
 
 const Chekout:React.FC=()=>{
     const dispatch=useDispatch<AppDispatch>();
     const {totalAmount}=useSelector((state:RootState)=>state.food);
     const handleCloseChekout=()=>{
-        dispatch(modalActions.hideModal())
+        dispatch(foodActions.resetSelectedFoods());
+     dispatch(modalActions.setContentModal('cart'))
     }
     const submit=()=>{
         dispatch(modalActions.setContentModal('success'))
