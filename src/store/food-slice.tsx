@@ -47,7 +47,9 @@ const foodSlice=createSlice({
                     name:newItem.name,
                     quantity:1,
                     price:newItem.price,
-                    id:newItem.id
+                    id:newItem.id,
+                    image:newItem.image, /*جدید اضافه شد*/
+                    description: newItem.description
                 })
             }
             state.totalAmount=state.totalAmount+Number(newItem.price);

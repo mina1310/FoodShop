@@ -8,7 +8,7 @@ const Food:React.FC<FoodItem>=({id,image,name,price,description})=>{
     const dispath=useDispatch();
      const addMealFood=()=>{
         dispath(foodActions.addFood({
-            id,name,price
+            id,name,price,image,description
         }))
     }
 

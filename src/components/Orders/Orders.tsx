@@ -1,0 +1,29 @@
+import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
+const Orders:React.FC=()=>{
+   const{selectedFoods}=useSelector((state:RootState)=>state.food)
+   console.log("Selected Foods in State:", selectedFoods); 
+   const content='Your cart is empty, go pick a delicious meal!'
+return(
+    <div>
+    {selectedFoods.length > 0 ? (
+      <div>
+        {selectedFoods.map((item) => (
+          <li key={item.id}>
+            <div>
+              <img src={`http://localhost:3000/${item.image}`} alt={item.name} />
+              <div>name:{item.name}</div>
+              <div>Quantity: {item.quantity}</div>
+              <div>What’s special about this food?<br/>:{item.description}</div>
+            </div>
+          </li>
+        ))}
+      </div>
+    ) : (
+      <p>{content}</p>
+    )}
+  </div>
+);;
+}
+export default Orders;

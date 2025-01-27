@@ -1,9 +1,10 @@
 import React from "react";
+import Orders from "../components/Orders/Orders";
 
 const OrdersPage:React.FC=()=>{
 
     return(
-        <p>this is about orders</p>
+        <Orders />
 
     );
 }
