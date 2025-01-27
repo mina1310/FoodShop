@@ -64,6 +64,10 @@ const foodSlice=createSlice({
         {item!.quantity!--;}
 
         state.totalAmount = state.totalAmount -Number(item!.price);
+        },
+        resetSelectedFoods(state){
+        state.selectedFoods=[];
+        state.totalAmount=0;
         }
     }
 

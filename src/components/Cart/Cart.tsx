@@ -14,7 +14,7 @@ const showCheckout=()=>{
     dispatch(modalActions.setContentModal('chekout'));
 }
 const closeCart=()=>{
-    dispatch(modalActions.hideModal());
+    dispatch(foodActions.resetSelectedFoods());
 }
 const addMealFood=(items:FoodItem)=>{
     dispatch(foodActions.addFood(items))
