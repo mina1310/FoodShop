@@ -3,11 +3,13 @@ import Buttons from "../Buttons";
 import { modalActions } from "../../store/modal";
 import React from "react";
 import { AppDispatch } from "../../store";
+import { foodActions } from "../../store/food-slice";
 import classes from './success.module.css'
 
 const Success:React.FC=()=>{
     const dispatch=useDispatch<AppDispatch>();
     const close=()=>{
+       dispatch(foodActions.resetSelectedFoods());
        dispatch(modalActions.setContentModal('cart'))
     }
     return(
