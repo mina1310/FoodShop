@@ -8,7 +8,7 @@ import classes from './success.module.css'
 const Success:React.FC=()=>{
     const dispatch=useDispatch<AppDispatch>();
     const close=()=>{
-        dispatch(modalActions.hideModal());
+       dispatch(modalActions.setContentModal('cart'))
     }
     return(
         <div className={classes['success']}>
