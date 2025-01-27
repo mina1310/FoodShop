@@ -38,6 +38,8 @@ top:2.2rem;
    
     margin: 2rem 2.5rem;
     font-size: 1rem;
+    line-height:1.7rem;
+    padding:0 1rem
 }
 .fooddetail__action{
     position: absolute;
@@ -63,12 +65,5 @@ top:2.2rem;
         font-size: 15px;
         margin:auto 1.5rem;
  } 
- .fooddetail__description{
-   
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-}
- 
+
  }
