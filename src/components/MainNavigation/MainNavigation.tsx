@@ -23,9 +23,9 @@ const MainNavigation :React.FC=()=>{
         <img src={logo} alt="this is logo img"  />
         </div >
         <div className={classes.nav__menu}>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/orders'>Orders</NavLink>
-        <NavLink onClick={handleCart} to='/cart'>Cart<div className={classes.nav__menu_count}>{selectedQuantity}</div></NavLink>
+        <NavLink className={({isActive})=> isActive?classes.active:undefined} to='/'>Home</NavLink>
+        <NavLink className={({isActive})=> isActive?classes.active:undefined} to='/orders'>Orders</NavLink>
+        <NavLink className={({isActive})=> isActive?classes.active:undefined} onClick={handleCart} to='/cart'>Cart<div className={classes.nav__menu_count}>{selectedQuantity}</div></NavLink>
         </div>
         </div>
     )

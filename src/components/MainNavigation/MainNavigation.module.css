@@ -3,6 +3,7 @@
     justify-content:flex-start;
     gap: 30rem;
     max-width: 90%;
+    
   }
   .nav__image{
     padding:1rem;
@@ -19,6 +20,7 @@
     display: flex;
     gap: 3rem;
     align-items: center;
+    padding:0 2rem;
   }
   .nav__menu a{
     font-family: 'Lato', sans-serif;
@@ -27,6 +29,11 @@
     font-weight: 700;
     position: relative;
   }
+  .nav__menu a:hover,
+ .nav__menu a.active {
+  color: #ffc404; 
+  
+}
   .nav__menu_count{
     display: flex;
     justify-content: center;
@@ -41,4 +48,28 @@
     font-size: 12px;
     color: black;
     font-weight: 600;
+    animation: pop 0.3s ease;
+  }
+  @keyframes pop {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+
+
+
+
+  @media screen and (max-width:768px){
+    .nav__header{
+      gap:15rem;
+      
+    } 
   }

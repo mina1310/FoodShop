@@ -13,7 +13,7 @@
 }
 
 .meal-food__item{
-  width:(33.33%-12rem);
+  width:calc(33.33%-12rem);
   height: 33rem;
   margin:0.5rem 0rem;
   background-color: #1d1a16;
@@ -28,36 +28,14 @@
     margin:2rem 2rem;
   }
 }
-/* .meal-food{
-    max-width: 1000px;
-    padding:20px;
+@media screen and (max-width:468px){
+  .meal-food{ 
     display:flex;
+    flex-direction: column;
     justify-content: center;
-  
-   
+    align-items: center;
+  }
 }
 
-.meal-food__list {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    width: 100%;
-    max-width: 1000px;
-    margin:0 auto;
-    gap:20px;
-    padding: 0;
-   
-    
-  }
-  .meal-food__item{
-    flex: 1 1 calc(33.333% - 20px);                      
-    background-color: #1d1a16;
-    border-radius: 1rem;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
-    
-  
-  } */
   
  
