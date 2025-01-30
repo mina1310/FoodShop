@@ -28,5 +28,6 @@ const modalSlice=createSlice({
     
     }
 })
+
 export const modalActions=modalSlice.actions;
 export default modalSlice;
