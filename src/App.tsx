@@ -10,22 +10,20 @@ import OrdersPage from "./pages/OrdersPage";
 import CartPage from "./pages/CartPage";
 import FoodDetailPage from "./pages/FoodDetailPage";
 
-
-const App:React.FC =() =>{
-  const router=createBrowserRouter ([
-    {path:'/' ,
-    element:<RootLayout />,
-    children:[
-      {path:'/', element:<Home />},
-      {path:'/orders', element:<OrdersPage />},
-      {path:'/cart', element:<CartPage />},
-      {path:'/:description',element:<FoodDetailPage />}
-      ]
+const App: React.FC = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLayout />,
+      children: [
+        { path: "/", element: <Home /> },
+        { path: "/orders", element: <OrdersPage /> },
+        { path: "/cart", element: <CartPage /> },
+        { path: "/:description", element: <FoodDetailPage /> },
+      ],
     },
+  ]);
 
-  ])
-    
-  
   // const displayModal=useSelector(state=>state.modal.showModal)
   // console.log('this is:',displayModal)
   return (
@@ -36,6 +34,6 @@ const App:React.FC =() =>{
     //   <MealFood />
     // </>
   );
-}
+};
 
 export default App;

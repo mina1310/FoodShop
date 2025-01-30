@@ -1,21 +1,21 @@
-.meal-food{
+.meal-food {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin:2rem 3rem;
+  margin: 2rem 3rem;
 }
-.meal-food__list{
+.meal-food__list {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   flex-wrap: wrap;
-  gap:3rem;
-  width:100%
+  gap: 3rem;
+  width: 100%;
 }
 
-.meal-food__item{
-  width:calc(33.33%-12rem);
+.meal-food__item {
+  width: calc(33.33%-12rem);
   height: 33rem;
-  margin:0.5rem 0rem;
+  margin: 0.5rem 0rem;
   background-color: #1d1a16;
   border-radius: 1rem;
   text-align: center;
@@ -23,19 +23,16 @@
   overflow: hidden;
 }
 
-@media screen and (max-width:768px){
-  .meal-food{ 
-    margin:2rem 2rem;
+@media screen and (max-width: 768px) {
+  .meal-food {
+    margin: 2rem 2rem;
   }
 }
-@media screen and (max-width:468px){
-  .meal-food{ 
-    display:flex;
+@media screen and (max-width: 468px) {
+  .meal-food {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 }
-
-  
- 
