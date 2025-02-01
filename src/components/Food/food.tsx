@@ -4,7 +4,13 @@ import { foodActions } from "../../store/food-slice";
 import { FoodItem } from "../../store/food-slice-type";
 import classes from "./food.module.css";
 import { Link } from "react-router-dom";
-const Food: React.FC<FoodItem> = ({ id, image, name, price, description }) => {
+export const Food: React.FC<FoodItem> = ({
+  id,
+  image,
+  name,
+  price,
+  description,
+}) => {
   const dispath = useDispatch();
   const addMealFood = () => {
     dispath(
@@ -28,7 +34,6 @@ const Food: React.FC<FoodItem> = ({ id, image, name, price, description }) => {
         <h3 className={classes["food__item-name"]}>{name}</h3>
       </Link>
       <p className={classes["food__item-price"]}>${price}</p>
-      {/* <p className={classes['food__item-description']}>{description}</p> */}
       <Buttons
         className={classes["food__item-action"]}
         onClick={addMealFood}
@@ -37,4 +42,3 @@ const Food: React.FC<FoodItem> = ({ id, image, name, price, description }) => {
     </article>
   );
 };
-export default Food;

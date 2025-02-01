@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getData } from "../../store/food-slice";
-import Food from "../Food/food";
+import Food from "../Food/Food";
 import { AppDispatch, RootState } from "../../store";
 import classes from "./MealFood.module.css";
 
