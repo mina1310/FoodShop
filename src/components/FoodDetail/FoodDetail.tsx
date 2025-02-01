@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import classes from "./FoodDetail.module.css";
 
-const FoodDetail: React.FC = () => {
+export const FoodDetail: React.FC = () => {
   const params = useParams();
   const location = useLocation();
   const { name, description } = location.state || {};
@@ -20,4 +20,3 @@ const FoodDetail: React.FC = () => {
     </div>
   );
 };
-export default FoodDetail;
