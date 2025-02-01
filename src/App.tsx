@@ -1,7 +1,3 @@
-// import { useSelector } from "react-redux";
-// import Header from "./components/Header";
-// import Modal from "./components/modal";
-// import MealFood from "./components/MealFood";
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
