@@ -1,13 +1,7 @@
-import { InputHTMLAttributes } from "react";
 import classes from "./input.module.css";
+import { InputProps } from "./Input.type";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  id: string;
-  type: string;
-  label: string;
-  inline?: boolean;
-}
-const Input: React.FC<InputProps> = ({
+export const Input: React.FC<InputProps> = ({
   id,
   type,
   label,
@@ -25,4 +19,3 @@ const Input: React.FC<InputProps> = ({
     </div>
   );
 };
-export default Input;

@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import Input from "../Input/Input";
 import { modalActions } from "../../store/modal";
 import Buttons from "../Buttons";
 import React, { useState } from "react";
@@ -9,6 +8,7 @@ import { foodActions } from "../../store/food-slice";
 import { Form } from "react-router-dom";
 import classes from "./chekout.module.css";
 import { sendData } from "../../store/order-slice";
+import { Input } from "../Input";
 
 const Chekout: React.FC = () => {
   const [error, setError] = useState<string>("");

@@ -7,7 +7,7 @@ import { AppDispatch, RootState } from "../../store";
 import { FoodItem } from "../../store/food-slice-type";
 import classes from "./Cart.module.css";
 
-const Cart: React.FC = () => {
+export const Cart: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { selectedFoods, totalAmount } = useSelector(
     (state: RootState) => state.food
@@ -73,4 +73,3 @@ const Cart: React.FC = () => {
     </div>
   );
 };
-export default Cart;
