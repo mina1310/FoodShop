@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import MainNavigation from "../components/MainNavigation/MainNavigation";
+import { MainNavigation } from "../components/MainNavigation";
 import React from "react";
 
 const RootLayout: React.FC = () => {

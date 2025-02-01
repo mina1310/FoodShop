@@ -5,7 +5,7 @@ import { Food } from "../Food";
 import { AppDispatch, RootState } from "../../store";
 import classes from "./MealFood.module.css";
 
-const MealFood: React.FC = () => {
+export const MealFood: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
     dispatch(getData());
@@ -30,7 +30,3 @@ const MealFood: React.FC = () => {
     </div>
   );
 };
-export default MealFood;
-
-// className={meal-food__list}
-// className={meal-food__item}

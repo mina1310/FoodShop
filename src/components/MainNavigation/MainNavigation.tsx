@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { modalActions } from "../../store/modal";
 
-const MainNavigation: React.FC = () => {
+export const MainNavigation: React.FC = () => {
   const selectedQuantity = useSelector(
     (state: RootState) => state.food.totalQuantity
   );
@@ -47,4 +47,3 @@ const MainNavigation: React.FC = () => {
     </div>
   );
 };
-export default MainNavigation;
