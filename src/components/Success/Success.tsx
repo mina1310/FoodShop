@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import Buttons from "../Buttons/Buttons";
+import { Buttons } from "../Buttons";
 import { modalActions } from "../../store/modal";
 import React from "react";
 import { AppDispatch } from "../../store";

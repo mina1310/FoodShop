@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { modalActions } from "../store/modal";
+import { modalActions } from "../../store/modal";
 import React from "react";
-import { RootState } from "../store";
+import { RootState } from "../../store";
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   const selectedQuantity = useSelector(
     (state: RootState) => state.food.totalQuantity
   );
@@ -22,4 +22,3 @@ const Header: React.FC = () => {
     </header>
   );
 };
-export default Header;

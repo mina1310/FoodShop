@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import classes from "./orders.module.css";
 import { useNavigate } from "react-router-dom";
-import Buttons from "../Buttons/Buttons";
+import { Buttons } from "../Buttons";
 export const Orders: React.FC = () => {
   const navigate = useNavigate();
   const { selectedFoods } = useSelector((state: RootState) => state.food);
