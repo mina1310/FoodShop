@@ -4,10 +4,9 @@ import { RootState } from "../../store";
 import classes from "./orders.module.css";
 import { useNavigate } from "react-router-dom";
 import Buttons from "../Buttons";
-const Orders: React.FC = () => {
+export const Orders: React.FC = () => {
   const navigate = useNavigate();
   const { selectedFoods } = useSelector((state: RootState) => state.food);
-  console.log("Selected Foods in State:", selectedFoods);
   const content =
     "Your order list is empty, Let’s add some delicious dishes to it !";
   return (
@@ -62,4 +61,3 @@ const Orders: React.FC = () => {
     </div>
   );
 };
-export default Orders;
