@@ -10,7 +10,7 @@ import classes from "./chekout.module.css";
 import { sendData } from "../../store/order-slice";
 import { Input } from "../Input";
 
-const Chekout: React.FC = () => {
+export const Chekout: React.FC = () => {
   const [error, setError] = useState<string>("");
   const dispatch = useDispatch<AppDispatch>();
   const { totalAmount } = useSelector((state: RootState) => state.food);
@@ -48,7 +48,6 @@ const Chekout: React.FC = () => {
     const postalPattern = /^[0-9]{5,}$/;
     if (!postalPattern.test(orderdata.postal)) {
       alert("The postal code must be at least 5 digits long.");
-      console.log("Error state:", error);
       return;
     }
 
@@ -56,9 +55,6 @@ const Chekout: React.FC = () => {
     dispatch(modalActions.setContentModal("success"));
   };
 
-  // const submit=()=>{
-
-  // }
   return (
     <div className={classes["chekout"]}>
       <p className={classes["chekout__total"]}>
@@ -111,4 +107,3 @@ const Chekout: React.FC = () => {
     </div>
   );
 };
-export default Chekout;
