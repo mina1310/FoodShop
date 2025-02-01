@@ -2,25 +2,13 @@ import { useSelector } from "react-redux";
 import { Cart } from "../Cart";
 import { Chekout } from "../Chekout";
 import Success from "../Success/Success";
-import React, { ReactNode } from "react";
+import React from "react";
 import { RootState } from "../../store";
 import classes from "./modal.module.css";
+import { ModalProbs } from "./Modal.type";
 
-interface ModalProbs {
-  children?: ReactNode;
-}
-const Modal: React.FC<ModalProbs> = ({ children }) => {
+export const Modal: React.FC<ModalProbs> = ({ children }) => {
   const content = useSelector((state: RootState) => state.modal.contentModal);
-  //     const renderContent=()=>{
-  //         if(content==='cart'){
-  //      return <Cart />
-  //     }if (content==='chekout'){
-  //         return <Chekout />
-  //     }if (content==='success'){
-  //         return <Success />
-  //     }
-  //     return null;
-  // };
 
   const modalComponent: { [key: string]: React.FC | undefined } = {
     cart: Cart,
