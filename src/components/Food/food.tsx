@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import Buttons from "../Buttons";
+import Buttons from "../Buttons/Buttons";
 import { foodActions } from "../../store/food-slice";
 import { FoodItem } from "../../store/food-slice-type";
 import classes from "./food.module.css";

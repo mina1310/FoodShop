@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { modalActions } from "../../store/modal";
-import Buttons from "../Buttons";
+import Buttons from "../Buttons/Buttons";
 import React, { useState } from "react";
 import { AppDispatch } from "../../store";
 import { RootState } from "../../store";
