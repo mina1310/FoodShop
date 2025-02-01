@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Cart } from "../Cart";
-import Chekout from "../Chekout/Chekout";
+import { Chekout } from "../Chekout";
 import Success from "../Success/Success";
 import React, { ReactNode } from "react";
 import { RootState } from "../../store";
