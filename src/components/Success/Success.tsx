@@ -6,7 +6,7 @@ import { AppDispatch } from "../../store";
 import { foodActions } from "../../store/food-slice";
 import classes from "./success.module.css";
 
-const Success: React.FC = () => {
+export const Success: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const close = () => {
     dispatch(foodActions.resetSelectedFoods());
@@ -32,4 +32,3 @@ const Success: React.FC = () => {
     </div>
   );
 };
-export default Success;

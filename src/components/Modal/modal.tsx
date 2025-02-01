@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Cart } from "../Cart";
 import { Chekout } from "../Chekout";
-import Success from "../Success/Success";
+import { Success } from "../Success";
 import React from "react";
 import { RootState } from "../../store";
 import classes from "./modal.module.css";
