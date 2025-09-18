@@ -12,8 +12,6 @@ export const MainNavigation: React.FC = () => {
   );
   const dispatch = useDispatch();
   function handleCart() {
-    console.log("button click");
-
     dispatch(modalActions.setContentModal("cart"));
     dispatch(modalActions.toggleModal());
   }

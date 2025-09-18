@@ -90,7 +90,6 @@ export const getData = () => {
         }
         const data = await response.json();
         dispatch(foodActions.setDone());
-        console.log(data);
         dispatch(foodActions.setFoods(data));
       } catch {
         dispatch(foodActions.setError("error"));

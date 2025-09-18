@@ -23,7 +23,6 @@ const modalSlice = createSlice({
     },
     setContentModal(state, action) {
       state.contentModal = action.payload;
-      console.log("contentModal");
     },
   },
 });
