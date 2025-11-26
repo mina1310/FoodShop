@@ -20,16 +20,7 @@ const App: React.FC = () => {
     },
   ]);
 
-  // const displayModal=useSelector(state=>state.modal.showModal)
-  // console.log('this is:',displayModal)
-  return (
-    <RouterProvider router={router} />
-    // <>
-    //   <Header />
-    //   {displayModal &&  <Modal />  }
-    //   <MealFood />
-    // </>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
