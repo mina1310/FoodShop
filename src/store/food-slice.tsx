@@ -49,7 +49,7 @@ const foodSlice = createSlice({
           quantity: 1,
           price: newItem.price,
           id: newItem.id,
-          image: newItem.image /*جدید اضافه شد*/,
+          image: newItem.image,
           description: newItem.description,
         });
       }
