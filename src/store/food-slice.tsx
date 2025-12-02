@@ -82,20 +82,18 @@ export const getData = () => {
   return async (dispatch: AppDispatch) => {
     dispatch(foodActions.setLoading());
 
-    const fetchDate = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/meals");
-        if (!response.ok) {
-          throw new Error("getting data failed");
-        }
-        const data = await response.json();
-        dispatch(foodActions.setDone());
-        dispatch(foodActions.setFoods(data));
-      } catch {
-        dispatch(foodActions.setError("error"));
+    try {
+      const response = await fetch("http://localhost:3000/meals");
+      if (!response.ok) {
+        throw new Error("getting data failed");
       }
-    };
-    fetchDate();
+      const data = await response.json();
+      dispatch(foodActions.setDone());
+      dispatch(foodActions.setFoods(data));
+    } catch {
+      dispatch(foodActions.setError("error"));
+      dispatch(foodActions.setDone());
+    }
   };
 };
 
