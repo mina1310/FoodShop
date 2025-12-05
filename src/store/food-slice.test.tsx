@@ -1,4 +1,3 @@
-import { useDispatch } from "react-redux";
 import foodSlice, { foodActions, getData } from "./food-slice";
 import { vi, vitest } from "vitest";
 
