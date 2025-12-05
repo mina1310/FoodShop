@@ -1,5 +1,6 @@
-import store from ".";
-import foodSlice, { foodActions } from "./food-slice";
+import { useDispatch } from "react-redux";
+import foodSlice, { foodActions, getData } from "./food-slice";
+import { vi, vitest } from "vitest";
 
 describe("store test", () => {
   const initialState = foodSlice.getInitialState();
@@ -121,5 +122,52 @@ describe("store test", () => {
     const result = foodReducer(initialState, foodActions.setError("error"));
 
     expect(result.error).toBe("error");
+  });
+});
+
+describe("test thunck", () => {
+  let mockDispatch: any;
+
+  beforeEach(() => {
+    mockDispatch = vi.fn();
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  test("should dispatch setLoading, setDone and setFoods on success", async () => {
+    const mockData = [
+      {
+        id: "2",
+        name: "chicken soap",
+        price: 2500,
+        quantity: 1,
+        image: "abs",
+        description: "it is made of chickhen and vegtables..",
+      },
+    ];
+    global.fetch = vitest
+      .fn()
+      .mockResolvedValue({ ok: true, json: () => Promise.resolve(mockData) });
+    await getData()(mockDispatch);
+    expect(mockDispatch).toHaveBeenNthCalledWith(1, foodActions.setLoading());
+    expect(mockDispatch).toHaveBeenNthCalledWith(2, foodActions.setDone());
+    expect(mockDispatch).toHaveBeenNthCalledWith(
+      3,
+      foodActions.setFoods(mockData)
+    );
+  });
+  test("should dispatch setError and setDone on failure", async () => {
+    global.fetch = vitest.fn().mockRejectedValue("error");
+
+    await getData()(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenNthCalledWith(1, foodActions.setLoading());
+    expect(mockDispatch).toHaveBeenNthCalledWith(
+      2,
+      foodActions.setError("error")
+    );
+    expect(mockDispatch).toHaveBeenNthCalledWith(3, foodActions.setDone());
   });
 });
