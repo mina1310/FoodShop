@@ -2,7 +2,6 @@ import { renderWithStore } from "../../test-utils/renderWithStore";
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { Cart } from "./Cart";
-import { configureStore } from "@reduxjs/toolkit";
 
 describe("complete test", () => {
   const mockFood = [
