@@ -1,4 +1,4 @@
-/* .fooddetail {
+.fooddetail {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -21,7 +21,7 @@
   align-items: center;
   background-color: #312c1d;
   color: #ffc404;
-  padding: 1rem 1rem;
+  padding: 1rem;
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
@@ -31,8 +31,7 @@
   font-size: 18px;
 }
 .fooddetail h1 {
-  position: absolute;
-  top: 2.2rem;
+  margin-top: 1rem;
 }
 .fooddetail__description {
   margin: 2rem 2.5rem;
@@ -55,13 +54,30 @@
   color: black;
   text-decoration: none;
 }
-
-@media (max-width: 768px) {
-  .fooddetail h2 {
-    width: 8rem;
-    height: 8rem;
-    left: -5rem;
-    font-size: 15px;
-    margin: auto 1.5rem;
+@media (max-width: 600px) {
+  .fooddetail {
+    width: 90%;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
   }
-} */
+
+  .fooddetail h2 {
+    position: static;
+    margin: auto 1rem;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    font-size: 15px;
+  }
+
+  .fooddetail h1 {
+    margin-top: 0;
+  }
+
+  .fooddetail__action {
+    position: static;
+    margin: 1rem auto 0 auto;
+    padding: 0.5rem 1.5rem;
+    width: auto;
+  }
+}
