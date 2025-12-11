@@ -27,7 +27,6 @@ export const Food: React.FC<FoodItem> = ({
   return (
     <article className={classes["food__item"]}>
       <Link to={`/${description}`} state={{ name, description }}>
-        {" "}
         <img src={`http://localhost:3000/${image}`} alt={description} />
       </Link>
       <Link to={`/${description}`} state={{ name, description }}>
