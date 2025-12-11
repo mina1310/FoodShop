@@ -8,17 +8,18 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2rem;
   width: 100%;
 }
 
 .meal-food__item {
-  height: 33rem;
+  height: auto;
+  min-height: 27rem;
   margin: 0.5rem 0rem;
   background-color: #1d1a16;
   border-radius: 1rem;
   text-align: center;
-  padding: 0;
+  padding-bottom: 1rem;
   overflow: hidden;
 }
 
