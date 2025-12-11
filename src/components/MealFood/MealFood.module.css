@@ -13,7 +13,6 @@
 }
 
 .meal-food__item {
-  width: calc(33.33%-12rem);
   height: 33rem;
   margin: 0.5rem 0rem;
   background-color: #1d1a16;
@@ -27,6 +26,15 @@
   .meal-food {
     margin: 2rem 2rem;
   }
+
+  .meal-food__item {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 543px) and (min-width: 468px) {
+  .meal-food__item {
+    width: 80%;
+  }
 }
 @media screen and (max-width: 468px) {
   .meal-food {
@@ -34,5 +42,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .meal-food__item {
+    width: 90%;
+    margin: 1rem 0;
   }
 }
