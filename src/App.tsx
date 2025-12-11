@@ -15,7 +15,7 @@ const App: React.FC = () => {
         { path: "/", element: <Home /> },
         { path: "/orders", element: <OrdersPage /> },
         { path: "/cart", element: <CartPage /> },
-        { path: "/:description", element: <FoodDetailPage /> },
+        { path: "/info/:id", element: <FoodDetailPage /> },
       ],
     },
   ]);
