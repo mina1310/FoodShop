@@ -9,9 +9,15 @@ import { Form } from "react-router-dom";
 import classes from "./chekout.module.css";
 import { sendData } from "../../store/order-slice";
 import { Input } from "../Input";
+import {
+  checkoutData,
+  checkoutValidation,
+} from "../../utils/checkoutValidation";
 
 export const Chekout: React.FC = () => {
-  const [error, setError] = useState<string>("");
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof checkoutData, string>>
+  >({});
   const dispatch = useDispatch<AppDispatch>();
   const { totalAmount } = useSelector((state: RootState) => state.food);
   const handleCloseChekout = () => {
@@ -29,28 +35,9 @@ export const Chekout: React.FC = () => {
       postal: formData.get("postal") as string,
       city: formData.get("city") as string,
     };
-    if (
-      !orderdata.name.trim() ||
-      !orderdata.email.trim() ||
-      !orderdata.street.trim() ||
-      !orderdata.postal.trim() ||
-      !orderdata.city.trim()
-    ) {
-      alert("Please fill in all the fields");
-      return;
-    }
-
-    if (!orderdata.email.includes("@")) {
-      setError("eeeeeee");
-      return;
-    }
-
-    const postalPattern = /^[0-9]{5,}$/;
-    if (!postalPattern.test(orderdata.postal)) {
-      alert("The postal code must be at least 5 digits long.");
-      return;
-    }
-
+    const validationError = checkoutValidation(orderdata);
+    setErrors(validationError);
+    if (Object.keys(validationError).length > 0) return;
     dispatch(sendData(orderdata));
     dispatch(modalActions.setContentModal("success"));
   };
@@ -60,7 +47,11 @@ export const Chekout: React.FC = () => {
       <p className={classes["chekout__total"]}>
         total Amount : ${Number(totalAmount).toFixed(2)}
       </p>
-      <Form onSubmit={submitHandler} className={classes["chekout__inputs"]}>
+      <Form
+        onSubmit={submitHandler}
+        className={classes["chekout__inputs"]}
+        noValidate
+      >
         <Input
           inline={false}
           label="FullName"
@@ -68,6 +59,9 @@ export const Chekout: React.FC = () => {
           id="fullName"
           name="name"
         />
+        {errors.name && (
+          <p className={classes["chekout__inputs-error"]}>{errors.name}</p>
+        )}
         <Input
           inline={false}
           label="E-mailAddress"
@@ -75,7 +69,9 @@ export const Chekout: React.FC = () => {
           id="emailAddress"
           name="email"
         />
-        {error && <p>{error}</p>}
+        {errors.email && (
+          <p className={classes["chekout__inputs-error"]}>{errors.email}</p>
+        )}
         <Input
           inline={false}
           label="Street"
@@ -83,6 +79,9 @@ export const Chekout: React.FC = () => {
           id="street"
           name="street"
         />
+        {errors.street && (
+          <p className={classes["chekout__inputs-error"]}>{errors.street}</p>
+        )}
         <Input
           inline={false}
           label="PostalCode"
@@ -91,7 +90,13 @@ export const Chekout: React.FC = () => {
           name="postal"
           minLength={5}
         />
+        {errors.postal && (
+          <p className={classes["chekout__inputs-error"]}>{errors.postal}</p>
+        )}
         <Input inline={false} label="City" type="text" id="city" name="city" />
+        {errors.city && (
+          <p className={classes["chekout__inputs-error"]}>{errors.city}</p>
+        )}
         <div className={classes["chekout__actions"]}>
           <Buttons
             className={classes["chekout__actions-closer"]}
