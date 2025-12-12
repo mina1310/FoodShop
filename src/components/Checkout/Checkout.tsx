@@ -6,15 +6,14 @@ import { AppDispatch } from "../../store";
 import { RootState } from "../../store";
 import { foodActions } from "../../store/food-slice";
 import { Form } from "react-router-dom";
-import classes from "./chekout.module.css";
-import { sendData } from "../../store/order-slice";
+import classes from "./checkout.module.css";
 import { Input } from "../Input";
 import {
   checkoutData,
   checkoutValidation,
 } from "../../utils/checkoutValidation";
 
-export const Chekout: React.FC = () => {
+export const Checkout: React.FC = () => {
   const [errors, setErrors] = useState<
     Partial<Record<keyof checkoutData, string>>
   >({});
@@ -38,7 +37,6 @@ export const Chekout: React.FC = () => {
     const validationError = checkoutValidation(orderdata);
     setErrors(validationError);
     if (Object.keys(validationError).length > 0) return;
-    dispatch(sendData(orderdata));
     dispatch(modalActions.setContentModal("success"));
   };
 

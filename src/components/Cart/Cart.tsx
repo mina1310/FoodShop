@@ -13,7 +13,7 @@ export const Cart: React.FC = () => {
     (state: RootState) => state.food
   );
   const showCheckout = () => {
-    dispatch(modalActions.setContentModal("chekout"));
+    dispatch(modalActions.setContentModal("checkout"));
   };
   const closeCart = () => {
     dispatch(foodActions.resetSelectedFoods());
@@ -33,22 +33,22 @@ export const Cart: React.FC = () => {
           {selectedFoods.map((items) => (
             <li key={items.id}>
               <div className={classes["cart__item"]}>
-                <span className={classes["cart__item-description"]}>
+                <div className={classes["cart__item-description"]}>
                   {items.name} - {items.quantity} * ${items.price}
-                </span>
-                <span className={classes["cart__item-controls"]}>
+                </div>
+                <div className={classes["cart__item-controls"]}>
                   <Buttons
                     className={classes["cart__item-actions"]}
                     onClick={() => removeMealFood(items.id)}
                     label="-"
                   />
-                  <span> {items.quantity}</span>
+                  <div> {items.quantity}</div>
                   <Buttons
                     className={classes["cart__item-actions"]}
                     onClick={() => addMealFood(items)}
                     label="+"
                   />
-                </span>
+                </div>
               </div>
             </li>
           ))}

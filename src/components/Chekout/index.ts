@@ -1,1 +1,0 @@
-export { Chekout } from "./Chekout";

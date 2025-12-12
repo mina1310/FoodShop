@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+export type ModalKey = "cart" | "checkout" | "success";
 interface modalState {
+  contentModal: ModalKey;
   showModal: boolean;
-  contentModal: null;
 }
 const initialState: modalState = {
+  contentModal: "cart",
   showModal: false,
-  contentModal: null,
 };
 const modalSlice = createSlice({
   name: "modal",
@@ -19,7 +20,6 @@ const modalSlice = createSlice({
     },
     hideModal(state) {
       state.showModal = false;
-      state.contentModal = null;
     },
     setContentModal(state, action) {
       state.contentModal = action.payload;
